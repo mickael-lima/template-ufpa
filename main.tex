@@ -1,0 +1,65 @@
+\input{preamble.tex}
+\input{capa.tex}
+
+% --- configurações gerais para o trabalho ---
+
+% --- capa ---
+\titulo{Titulo teste de trabalho academico}
+\autor{Mickael Lima Henry}
+\local{Belém $-$ PA}
+
+% Caso precise de mais um campo por qualquer motivo, siga
+% a organização abaixo e funcionará como esperado
+\instituicao{%
+  UNIVERSIDADE FEDERAL DO PARÁ
+  \par
+  FACULDADE DE ALGUMA COISA
+  \par
+  CURSO DE ALGUMA ÁREA
+}
+
+\data{2024}
+
+% --- contra-capa ---
+\preambulo{Algum preambulo interessante o suficiente, caso necessite}
+\orientador[Orientador(a): ]{Prof quaisquer}
+
+\begin{document}
+
+% -- configurações gerais pós-documento
+\selectlanguage{brazil}
+\frenchspacing
+
+\pretextual
+\imprimircapa
+\imprimirfolhaderosto
+
+% --- alguns exemplos de elementos pré textuais possiveis
+\include{content/dedicatoria.tex}
+\include{content/resumo.tex}
+
+\pdfbookmark[0]{\contentsname}{toc}
+\tableofcontents*
+\cleardoublepage
+
+% --- conteúdo (coloque os .tex de conteúdo aqui) ---
+%
+% por ex: crie um arquivo intro.tex na pasta content/ para armazenar a introdução do trabalho e, depois que terminar
+% de editá-lo, coloque
+%
+% \input{content/intro.tex}
+%
+% abaixo de \pagestyle para incluir esse .tex, isso permitirá
+% com que os arquivos fiquem mais organizados
+\textual
+\pagestyle{simple}
+
+\input{content/intro.tex}
+
+
+% --- pós-conteúdo / final do projeto (ex: bibliografia de referências)
+\newpage
+\postextual
+
+\bibliography{bibliografia}
+\end{document}

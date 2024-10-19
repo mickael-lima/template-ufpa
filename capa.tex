@@ -1,0 +1,69 @@
+% --- Capa gerada pelo comando \imprimircapa
+
+\renewcommand{\imprimircapa}{%
+  \begin{capa}%
+
+    % header
+    \center
+
+    \vspace{-1cm}
+    % --- brasão da UFPA
+    \begin{figure}[h]
+      \centering
+      \includegraphics[width=2.5cm]{img/Brasao_UFPA}
+    \end{figure}
+
+    \ABNTEXchapterfont\bfseries\large\imprimirinstituicao\\
+    \vfill
+
+    % centro + título + nomes
+    \begin{center}
+      \ABNTEXchapterfont\bfseries\large\imprimirtitulo\\
+      \vspace{4cm}
+      \ABNTEXchapterfont\bfseries\large\imprimirautor
+    \end{center}
+
+    % footer
+    \vfill
+    \ABNTEXchapterfont\large\imprimirlocal\\
+    \ABNTEXchapterfont\large\imprimirdata
+    \vspace*{1cm}
+  \end{capa}
+}
+
+% --- folha de rosto
+\makeatletter
+\renewcommand{\folhaderostocontent}{
+  \begin{center}
+
+    % --- header ---
+    {\ABNTEXchapterfont\large\imprimirautor}\par % \par necessário para corrigir bug de formatação
+    \vspace*{\fill}\vspace*{\fill}
+    {\ABNTEXchapterfont\bfseries\large\imprimirtitulo}
+
+    \vfill
+
+    % --- centro ---
+    \abntex@ifnotempty{\imprimirpreambulo}{%
+      \hspace{.45\textwidth}
+      \begin{minipage}{.5\textwidth}
+        \SingleSpacing
+        \imprimirpreambulo
+      \end{minipage}%
+      \vspace*{4cm}
+    }%
+
+    {\large\imprimirorientadorRotulo~\imprimirorientador\par}
+    \abntex@ifnotempty{\imprimircoorientador}{%
+      {\large\imprimircoorientadorRotulo~\imprimircoorientador}%
+    }%
+
+    % --- footer ---
+    \vspace*{\fill}
+    {\large\imprimirlocal}
+    \par
+    {\large\imprimirdata}
+    \vspace*{1cm}
+  \end{center}
+}
+\makeatother
